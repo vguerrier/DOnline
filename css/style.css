@@ -1,11 +1,31 @@
 @import url(https://fonts.googleapis.com/css?family=Tenor+Sans);
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
 
 html {
   
   
   /*background-image:url(../images/PSR2.jpg);*/
   background-image:url(../images/blue2.jpg);
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  vertical-align: middle;
+    width: 150px;
+  /*margin-bottom: 1rem;*/
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-danger {
+  color: #721c24;
+  font: roboto;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  font-size: 12px;
+  font: 400 13.3333px Arial;
 }
 
 .container {

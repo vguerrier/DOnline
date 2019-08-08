@@ -5,14 +5,29 @@
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/style.css">
-           </head>
+</head>
 
 
 
 <?php
-
+    require 'functions/auth.php';
+    $erreur = null;
+    if (!empty($_POST['_username']) && !empty($_POST['_password'])) {
+            // on connecte
+            if (!ldap_con($_POST['_username'], $_POST['_password'])) {
+                $erreur = "Invalid credentials";
+            }
+            
+       /*     if {
+                    //ldap_con();
+        }
+        else {
+                $erreur = "Invalide credentials";
+        }*/
+}
 ?>
     <body>
+    
         <div class="container">
             <div class="login">
 
@@ -20,6 +35,11 @@
 
                     Dashboard Maintenance. <br>
                     <div class="Please-login">Please login.</div>
+                    <?php if ($erreur): ?>
+        <div class="alert alert-danger">
+            <?= $erreur ?>
+        </div>
+    <?php endif; ?>
 
                 </div>
                 <form action="" method="post">

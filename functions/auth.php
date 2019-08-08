@@ -9,18 +9,19 @@ function est_connecte (): bool {
 
 function utilisateur_connecte (): void {
     if(!est_connecte()) {
+        echo ('NON connectééééé');
         header('Location: /login.php');
         exit();
     };
 }
 
-function LDAP_con() {
+function LDAP_con($username, $password): bool {
     
 
     // Construct new Adldap instance.
     # LDAP #
     $BASE_DN = "dc=EYC,dc=com";
-    $SEARCH_DN = "EYC\Guerrier";
+    $SEARCH_DN = "EYC\guerrier";
     $SEARCH_PASSWORD = "Bafmax88";
     # SEARCH_DN="EYC\messika"
     # SEARCH_PASSWORD="Gm2016*-"
@@ -58,15 +59,30 @@ function LDAP_con() {
         $provider = $ad->connect();
 
         // Performing a query.
-        $results = $provider->search()->where('cn', '=', 'John Doe')->get();
+        //$username = "EYC\\" . $username;
+        //$results = $provider->search()->where('cn', '=', 'John Doe')->get();
 
+        
+        $user = $provider->search()->find("messika");
+        if ($provider->auth()->attempt($username, $password)) {
+            
+             echo "Connected";
+             session_start();
+             $_SESSION['connect'] = 1;
+             header('Location: /dahboard.php');
+             exit();
+        }
+        else {
+            return false;
+        }
+        
         // Finding a record.
-        $user = $provider->search()->find('guerrier');
+        $user = $provider->search()->find('kemler');
         // Authenticating against your LDAP server.
-        if ($provider->auth()->attempt("EYC\Guerrier", "Bafmax88")) {
-            echo "Connected"; }
-        else
-            echo "not Connected";
+     //   if ($provider->auth()->attempt("EYC\Guerrier", "Bafmax88")) {
+     //       echo "Connected"; }
+     //   else
+     //       echo "not Connected";
         
         
         
