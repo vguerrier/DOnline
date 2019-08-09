@@ -5,9 +5,4 @@
     ?>
 
 
-        <body>
             Welcome to Dashboard Online !
-        </body>
-
-
-    </html>

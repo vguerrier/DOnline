@@ -11,4 +11,5 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 //$ad = new \Adldap\Adldap();
 //ldap_con();
+require_once 'elements/footer.php';
 ?>

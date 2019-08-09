@@ -48,5 +48,4 @@ if (est_connecte()) {
                 </form>
             </div>
         </div>
-    </body>
-</html>
+     <?php   require_once 'elements/footer.php'; ?>
