@@ -4,15 +4,21 @@ function est_connecte (): bool {
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    return !empty($_SESSION['connecte']);
+    return !empty($_SESSION['connect']);
 }
 
-function utilisateur_connecte (): void {
+function forcer_utilisateur_connecte (): void {
     if(!est_connecte()) {
-        echo ('NON connectééééé');
-        header('Location: /login.php');
-        exit();
-    };
+       header('Location: /login.php');
+        exit(); 
+    }
+
+}
+
+function logOut() {
+    session_start();
+    unset($_SESSION['connect']);
+    hearder('Location: /');
 }
 
 function LDAP_con($username, $password): bool {
@@ -29,7 +35,7 @@ function LDAP_con($username, $password): bool {
     # $UID_KEY = samaccountname;
     $HOST = "10.118.0.6";
 
-    require __DIR__ . '/../vendor/autoload.php';
+    require_once __DIR__ . '/../vendor/autoload.php';
     
 
 
@@ -63,13 +69,13 @@ function LDAP_con($username, $password): bool {
         //$results = $provider->search()->where('cn', '=', 'John Doe')->get();
 
         
-        $user = $provider->search()->find("messika");
+        //$user = $provider->search()->find("messika");
         if ($provider->auth()->attempt($username, $password)) {
             
              echo "Connected";
              session_start();
              $_SESSION['connect'] = 1;
-             header('Location: /dahboard.php');
+             header('Location: /dashboard.php');
              exit();
         }
         else {

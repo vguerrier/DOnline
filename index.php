@@ -1,10 +1,11 @@
 <?php
 /*** Index ***/
 /* Main */
-
-require 'functions/auth.php';
-utilisateur_connecte();
-require __DIR__ . '/vendor/autoload.php';
+require_once 'elements/header.php';
+require_once 'functions/auth.php';
+forcer_utilisateur_connecte();
+header('Location: /dashboard.php');
+require_once __DIR__ . '/vendor/autoload.php';
 //use Adldap\Adldap;
 //utilisateur_connecte ();
 
