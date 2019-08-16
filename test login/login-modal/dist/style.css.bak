@@ -86,7 +86,7 @@ body {
 .modal.is-open {
   height: 100%;
   /*background: #151F34;*/
-  background-image:url(./images/blue2.jpg);
+  background-image:url(../images/blue2.jpg);
 }
 .modal.is-open .modal-button {
   opacity: 0;

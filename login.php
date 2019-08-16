@@ -19,33 +19,33 @@ if (est_connecte()) {
     exit();
 }
 ?>
-    <body>
-    
-        <div class="container">
-            <div class="login">
 
-                <div class="login-heading">
 
-                    Dashboard Maintenance. <br>
-                    <div class="Please-login">Please login.</div>
-                    <?php if ($erreur): ?>
-        <div class="alert alert-danger">
-            <?= $erreur ?>
-        </div>
-    <?php endif; ?>
-
+<!-- partial:index.partial.html -->
+<div class="modal is-open">
+    <div class="modal-container">
+        <div class="modal-left">
+            <h1 class="modal-title">Dashboard Maintenance</h1>
+            <p class="modal-desc">Welcome to Dashboard Online.</BR>
+                Product Support Retail.</p>
+            <form action="" method="post">
+                <div class="input-block">
+                    <label for="email" class="input-label">Email</label>
+                    <input type="email" name="_username" id="email" placeholder="Email">
                 </div>
-                <form action="" method="post">
-                        
-                    <input type="text" name="_username" placeholder="Username" required="required" class="input-txt" />
-                    <input type="password" name="_password" placeholder="Password" required class="input-txt" />
-                    <div class="login-footer">
-                        <a href="#" class="lnk"></a>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn--right">Sign in  </button>
-                    </div>
-                
-                </form>
-            </div>
+                <div class="input-block">
+                    <label for="password" class="input-label">Password</label>
+                    <input type="password" name="_password" id="password" placeholder="Password">
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="input-button">Login</button>
+                    <img class="sraiimg" src="./images/SRAI.PNG" />
+                </div>
+            </form>
         </div>
+        <div class="modal-right">
+            <img  src="./images/mountains.jpg" alt="">
+        </div>
+	</div>
+</div>
      <?php   require_once 'elements/footer.php'; ?>
