@@ -6,3 +6,8 @@
 
 
             Welcome to Dashboard Online !
+<?php        
+    include('functions/connect.php');
+?>
+
+<?php   require_once 'elements/footer.php'; ?>

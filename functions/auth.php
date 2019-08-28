@@ -83,7 +83,7 @@ function LDAP_con($username, $password): bool {
         }
         
         // Finding a record.
-        $user = $provider->search()->find('kemler');
+        //$user = $provider->search()->find('kemler');
         // Authenticating against your LDAP server.
      //   if ($provider->auth()->attempt("EYC\Guerrier", "Bafmax88")) {
      //       echo "Connected"; }
@@ -93,7 +93,7 @@ function LDAP_con($username, $password): bool {
         
         
     } catch (\Adldap\Auth\BindException $e) {
-
+        
         // There was an issue binding / connecting to the server.
 
     }

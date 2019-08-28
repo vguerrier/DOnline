@@ -14,10 +14,7 @@
             }
 }
 
-if (est_connecte()) {
-    header('Location : /dashboard.php');
-    exit();
-}
+
 ?>
 
 
@@ -28,6 +25,7 @@ if (est_connecte()) {
             <h1 class="modal-title">Dashboard Maintenance</h1>
             <p class="modal-desc">Welcome to Dashboard Online.</BR>
                 Product Support Retail.</p>
+                
             <form action="" method="post">
                 <div class="input-block">
                     <label for="email" class="input-label">Email</label>
