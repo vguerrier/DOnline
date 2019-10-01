@@ -1,0 +1,5 @@
+pour lancer l'application.
+lancer un terminal et faire : 
+php -S localhost:8000
+
+ouvrir le projet sous visual code : ouvrir un visual code et faire ouvrir un répertoire, choisir DOnline

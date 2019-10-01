@@ -42,7 +42,7 @@
             </form>
         </div>
         <div class="modal-right">
-            <img  src="./images/mountains.jpg" alt="">
+            <img  src="./images/org.jpg" alt="">
         </div>
 	</div>
 </div>

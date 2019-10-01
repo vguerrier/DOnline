@@ -28,7 +28,7 @@ function LDAP_con($username, $password): bool {
     # LDAP #
     $BASE_DN = "dc=EYC,dc=com";
     $SEARCH_DN = "EYC\guerrier";
-    $SEARCH_PASSWORD = "Bafmax88";
+    $SEARCH_PASSWORD = "Bafmax9999*";
     # SEARCH_DN="EYC\messika"
     # SEARCH_PASSWORD="Gm2016*-"
     # $DEFAULT_ROLES = ROLE_USER;
